@@ -2,7 +2,7 @@ services:
   node1:
     container_name: node1
     image: hyperledger/besu:latest
-    command: --data-path=/data --genesis-file=/genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT,ADMIN,DEBUG,MINER,TXPOOL,WEB3,TRACE --min-gas-price=0 --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-max-request-content-length=90485760 --profile=ENTERPRISE --rpc-ws-enabled --rpc-ws-host="0.0.0.0" --rpc-ws-port=9545
+    command: --data-path=/data --genesis-file=/genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT,ADMIN,DEBUG,MINER,TXPOOL,WEB3,TRACE --min-gas-price=0 --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-max-request-content-length=90485760 --profile=ENTERPRISE --rpc-ws-enabled --rpc-ws-host="0.0.0.0" --rpc-ws-port=9545 --rpc-http-max-active-connections=2000
     volumes:
       - ./network/Node-1/data:/data
       - ./network/genesis.json:/genesis.json
